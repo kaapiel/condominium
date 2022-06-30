@@ -47,11 +47,21 @@ namespace StarterAssets
                 RenderSettings.skybox = skyMaterial;
                 Image buttonImage = GameObject.Find("Image_Icon_Day_Night").GetComponent<Image>();
                 buttonImage.sprite = Resources.Load("UI/sun", typeof(Sprite)) as Sprite;
+
+                GameObject moon = GameObject.Find("Sun");
+                Light moonComponent = moon.GetComponent<Light>();
+                moonComponent.color = Color.white;
+                RenderSettings.sun = moonComponent;
             } else {
                 Material skyMaterial = Resources.Load("Skyboxes/Materials/SkyMidnight", typeof(Material)) as Material;
                 RenderSettings.skybox = skyMaterial;
                 Image buttonImage = GameObject.Find("Image_Icon_Day_Night").GetComponent<Image>();
                 buttonImage.sprite = Resources.Load("UI/moon", typeof(Sprite)) as Sprite;
+                
+                GameObject moon = GameObject.Find("Sun");
+                Light moonComponent = moon.GetComponent<Light>();
+                moonComponent.color = Color.white / 2.0f;
+                RenderSettings.sun = moonComponent;
             }
             
         }
