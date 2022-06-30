@@ -58,3 +58,13 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+.DS_Store
+
+#Project specific data
+/Assets/StreamingAssets/
+/Assets/BundleAssets/
+*.skp
+*.dae
+*.fbx
+*.blend
+*.prefab
