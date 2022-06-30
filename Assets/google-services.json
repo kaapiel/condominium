@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "81773601141",
+    "project_id": "condominium-unity",
+    "storage_bucket": "condominium-unity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81773601141:android:e46bbdba5194d093d8333c",
+        "android_client_info": {
+          "package_name": "com.aguido.condominium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81773601141-g2kq5ncjk71k4tknm0hies0stuusrgap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD91P-eYWsLgTh3usIw7wz7tZ63BWEpkJo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81773601141-g2kq5ncjk71k4tknm0hies0stuusrgap.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "81773601141-98c20013c6umtfb0au27v7ugdbrqt50g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.aguido.condominium"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
