@@ -3,17 +3,7 @@ guid: b1a06d9fc038b48b49f54f5af6b18300
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Nordli_Fabrics
-    second: {fileID: 2100000, guid: e4e1a2e19d894463da3165d9080d8962, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Nordli_Frame
-    second: {fileID: 2100000, guid: 742bc2fe4c50746d0abe7454fead1ac0, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
