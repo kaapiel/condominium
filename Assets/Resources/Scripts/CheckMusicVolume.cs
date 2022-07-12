@@ -95,8 +95,23 @@ namespace SlimUI.ModernMenu{
 	        using (UnityWebRequest wr = UnityWebRequest.Get(baseUrl + cadName)) {
 				wr.SendWebRequest();
 				
+				GameObject mainMenu = GameObject.Find("Main_Menu_New");
+        		Transform[] trs = mainMenu.GetComponentsInChildren<Transform>(true);
+        		GameObject loadingScreen = null;
+        		foreach (Transform t in trs ) {
+        			if (t.name == "LoadingScreen") {
+        				loadingScreen = t.gameObject;
+        				t.gameObject.SetActive(true);
+        				break;
+        			}
+        		}
+
+				GameObject downloadPercentage = GameObject.Find("LoadingPercentage");
+				GameObject loadingBar = GameObject.Find("LoadingBar");
+
 				while (!wr.isDone) {
-					transform[2].GetComponent<Text>().text = Math.Round(wr.downloadProgress * 100f, 2) + "%";
+					//downloadPercentage.transform.GetComponent<Text>().text = Math.Round(wr.downloadProgress * 100f, 2) + "%";
+					//loadingBar.transform.GetComponent<Slider>().value = (float) Math.Round(wr.downloadProgress, 2);
 					yield return null;
 			    }
 
@@ -108,7 +123,8 @@ namespace SlimUI.ModernMenu{
     				www.SendWebRequest();
 
 				    while (!www.isDone) {
-				    	transform[2].GetComponent<Text>().text = Math.Round(www.downloadProgress * 100f, 2) + "%";
+				    	downloadPercentage.transform.GetComponent<Text>().text = Math.Round(www.downloadProgress * 100f + 10, 2) + "%";
+				    	loadingBar.transform.GetComponent<Slider>().value = (float) Math.Round(www.downloadProgress * 100f + 10, 2);
 				    	yield return null;
 				    }
 
@@ -163,6 +179,8 @@ namespace SlimUI.ModernMenu{
 		        		Instantiate(asset);
 		        		Instantiate(controls);
 	  				}
+
+	  				loadingScreen.SetActive(false);
 		        }		
 			}
 
