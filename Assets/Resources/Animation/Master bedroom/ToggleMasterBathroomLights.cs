@@ -30,10 +30,10 @@ public class ToggleMasterBathroomLights : MonoBehaviour
              
                 foreach (var go in raycastResults){
                     if (go.gameObject.name == "UI_Virtual_Button_Action") {
-                        GameObject piece = GameObject.Find("Living room");
+                        GameObject piece = GameObject.Find("Master bathroom");
                         foreach (Transform transform in piece.transform)
                         {
-                            if (transform.name == "Master bathroom") {
+                            if (transform.name == "Lights") {
                                 foreach(Transform light in transform)
                                 {
                                     if(light.GetComponent<Light>().enabled == true)

@@ -30,10 +30,10 @@ public class ToggleMidBedroomLights : MonoBehaviour
              
                 foreach (var go in raycastResults){
                     if (go.gameObject.name == "UI_Virtual_Button_Action") {
-                        GameObject piece = GameObject.Find("Living room");
+                        GameObject piece = GameObject.Find("Mid bedroom");
                         foreach (Transform transform in piece.transform)
                         {
-                            if (transform.name == "Mid bedroom") {
+                            if (transform.name == "Lights") {
                                 foreach(Transform light in transform)
                                 {
                                     if(light.GetComponent<Light>().enabled == true)

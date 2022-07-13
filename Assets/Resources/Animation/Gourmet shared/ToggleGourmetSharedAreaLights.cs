@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ToggleLowerBathroomLights : MonoBehaviour
+public class ToggleGourmetSharedAreaLights : MonoBehaviour
 {
     private GameObject actionButton = null;
 
@@ -30,7 +30,7 @@ public class ToggleLowerBathroomLights : MonoBehaviour
              
                 foreach (var go in raycastResults){
                     if (go.gameObject.name == "UI_Virtual_Button_Action") {
-                        GameObject piece = GameObject.Find("Lower bathroom");
+                        GameObject piece = GameObject.Find("Gourmet shared");
                         foreach (Transform transform in piece.transform)
                         {
                             if (transform.name == "Lights") {
