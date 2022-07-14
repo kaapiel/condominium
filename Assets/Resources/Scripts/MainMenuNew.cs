@@ -25,6 +25,8 @@ namespace SlimUI.ModernMenu{
 		public GameObject PanelControls;
 		[Tooltip("The UI Panel that holds the VIDEO window tab")]
 		public GameObject PanelVideo;
+		[Tooltip("The UI Panel that holds the Character window tab")]
+		public GameObject PanelCharacters;
 		[Tooltip("The UI Panel that holds the GAME window tab")]
 		public GameObject PanelGame;
 		[Tooltip("The UI Panel that holds the KEY BINDINGS window tab")]
@@ -63,6 +65,8 @@ namespace SlimUI.ModernMenu{
 		public GameObject lineGame;
 		[Tooltip("Highlight Image for when VIDEO Tab is selected in Settings")]
 		public GameObject lineVideo;
+		[Tooltip("Highlight Image for when Character Tab is selected in Settings")]
+		public GameObject lineCharacter;
 		[Tooltip("Highlight Image for when CONTROLS Tab is selected in Settings")]
 		public GameObject lineControls;
 		[Tooltip("Highlight Image for when KEY BINDINGS Tab is selected in Settings")]
@@ -150,12 +154,14 @@ namespace SlimUI.ModernMenu{
 		void DisablePanels(){
 			PanelControls.SetActive(false);
 			PanelVideo.SetActive(false);
+			PanelCharacters.SetActive(false);
 			PanelGame.SetActive(false);
 			PanelKeyBindings.SetActive(false);
 
 			lineGame.SetActive(false);
 			lineControls.SetActive(false);
 			lineVideo.SetActive(false);
+			lineCharacter.SetActive(false);
 			lineKeyBindings.SetActive(false);
 
 			PanelMovement.SetActive(false);
@@ -176,6 +182,12 @@ namespace SlimUI.ModernMenu{
 			DisablePanels();
 			PanelVideo.SetActive(true);
 			lineVideo.SetActive(true);
+		}
+
+		public void CharactersPanel(){
+			DisablePanels();
+			PanelCharacters.SetActive(true);
+			lineCharacter.SetActive(true);
 		}
 
 		public void ControlsPanel(){

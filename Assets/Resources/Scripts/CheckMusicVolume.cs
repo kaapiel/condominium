@@ -82,6 +82,10 @@ namespace SlimUI.ModernMenu{
 		                //ts[0].GetComponent<Image>().sprite = sprite;
 		                //ts[1].GetComponent<Image>().sprite = sprite;
 		                # endif
+
+		                // This is not working. Here we're trying to set the scroll bar initially at top
+		       			//GameObject scrollBar = GameObject.Find("Scrollbar Vertical");
+		    			//scrollBar.transform.GetComponent<Scrollbar>().value = 1f;
 		    		}
 		    	}
 			}
@@ -130,6 +134,17 @@ namespace SlimUI.ModernMenu{
 
 			        if (www.result == UnityWebRequest.Result.Success) {
 
+			        	//default character
+			        	GameObject controls = Resources.Load("Prefabs/FemaleCharacter") as GameObject;
+
+			        	if (GameObject.Find("MALELINE") != null) {
+							controls = Resources.Load("Prefabs/MaleCharacter") as GameObject;
+						} else if (GameObject.Find("FEMALELINE") != null) {
+							controls = Resources.Load("Prefabs/FemaleCharacter") as GameObject;
+						} else if (GameObject.Find("ADVENTURERLINE") != null) {
+							controls = Resources.Load("Prefabs/AdventurerCharacter") as GameObject;
+						}
+
 			        	GameObject.Find("EventSystem").SetActive(false);
 						GameObject.Find("Canv_Options").SetActive(false);
 						GameObject.Find("Canv_Main").SetActive(false);
@@ -148,8 +163,7 @@ namespace SlimUI.ModernMenu{
 					  	lightComp.transform.localRotation = Quaternion.Euler(60, -50, 0);
 						RenderSettings.sun = lightComp;
 
-						GameObject controls = Resources.Load("Prefabs/Controls") as GameObject;
-				        Transform[] ts = controls.GetComponentsInChildren<Transform>();
+						Transform[] ts = controls.GetComponentsInChildren<Transform>();
 				        //PlayerArmature
 				        ts[3].localPosition = new Vector3(0, 15, 0);
 

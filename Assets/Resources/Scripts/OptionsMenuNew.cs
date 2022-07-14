@@ -36,10 +36,12 @@ namespace SlimUI.ModernMenu{
 		[Header("GAME SETTINGS")]
 		public GameObject showhudtext;
 		public GameObject tooltipstext;
-		public GameObject difficultynormaltext;
-		public GameObject difficultynormaltextLINE;
-		public GameObject difficultyhardcoretext;
-		public GameObject difficultyhardcoretextLINE;
+		public GameObject maletext;
+		public GameObject maletextLINE;
+		public GameObject femaletext;
+		public GameObject femaletextLINE;
+		public GameObject adventurertext;
+		public GameObject adventurertextLINE;
 
 		[Header("CONTROLS SETTINGS")]
 		public GameObject invertmousetext;
@@ -58,15 +60,9 @@ namespace SlimUI.ModernMenu{
 
 		public void  Start (){
 			// check difficulty
-			if(PlayerPrefs.GetInt("NormalDifficulty") == 1){
-				difficultynormaltextLINE.gameObject.SetActive(true);
-				difficultyhardcoretextLINE.gameObject.SetActive(false);
-			}
-			else
-			{
-				difficultyhardcoretextLINE.gameObject.SetActive(true);
-				difficultynormaltextLINE.gameObject.SetActive(false);
-			}
+			femaletextLINE.gameObject.SetActive(true);
+			adventurertextLINE.gameObject.SetActive(false);
+			maletextLINE.gameObject.SetActive(false);
 
 			// check slider values
 			musicSlider.GetComponent<Slider>().value = PlayerPrefs.GetFloat("MusicVolume");
@@ -282,18 +278,22 @@ namespace SlimUI.ModernMenu{
 			}
 		}
 
-		public void NormalDifficulty (){
-			difficultyhardcoretextLINE.gameObject.SetActive(false);
-			difficultynormaltextLINE.gameObject.SetActive(true);
-			PlayerPrefs.SetInt("NormalDifficulty",1);
-			PlayerPrefs.SetInt("HardCoreDifficulty",0);
+		public void Female (){
+			femaletextLINE.gameObject.SetActive(true);
+			adventurertextLINE.gameObject.SetActive(false);
+			maletextLINE.gameObject.SetActive(false);
 		}
 
-		public void HardcoreDifficulty (){
-			difficultyhardcoretextLINE.gameObject.SetActive(true);
-			difficultynormaltextLINE.gameObject.SetActive(false);
-			PlayerPrefs.SetInt("NormalDifficulty",0);
-			PlayerPrefs.SetInt("HardCoreDifficulty",1);
+		public void Male (){
+			femaletextLINE.gameObject.SetActive(false);
+			adventurertextLINE.gameObject.SetActive(false);
+			maletextLINE.gameObject.SetActive(true);
+		}
+
+		public void Adventurer (){
+			femaletextLINE.gameObject.SetActive(false);
+			adventurertextLINE.gameObject.SetActive(true);
+			maletextLINE.gameObject.SetActive(false);
 		}
 
 		public void ShadowsOff (){
